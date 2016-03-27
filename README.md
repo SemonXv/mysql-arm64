@@ -54,7 +54,7 @@ Then you will get like `0.0.0.0:32771`, so `32771` is the one assigned to 3306.
 You can check the logs of the container by running:
 
 ```
-docker logs mysql
+$ docker logs mysql
 ```
 
 You can use mysql service from the mysql container if you see an output like the following:
@@ -74,7 +74,7 @@ Please wait for one minute, then you can enjoy mysql service offerd by Docker!!!
 Then you can log on mysql server and run mysql as you want. Just type:
 
 ```
-mysql -ubobsense -p123456 -P12756 -h127.0.0.1
+$ mysql -ubobsense -p123456 -P12756 -h127.0.0.1
 ```
 
 ## Persist database data
