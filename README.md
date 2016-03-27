@@ -94,5 +94,5 @@ $ docker run -d -P
 ```
 
 # Special Declare
-Refer to [frodenas/mysql](https://hub.docker.com/r/frodenas/mysql/)
+Refer to [frodenas/mysql](https://hub.docker.com/r/frodenas/mysql/).
 And forgive my ignorance, you are welcomed to make suggestions. I will try my best to make better.
