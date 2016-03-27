@@ -49,7 +49,7 @@ You should make sure which port on host is assigned to 3306 exposed on mysql con
 $ docker port mysql 3306
 ```
 
-Then you will get like `0.0.0.0:12756`, so `12756` is the one assigned to 3306.
+Then you will get like `0.0.0.0:32771`, so `32771` is the one assigned to 3306.
 
 You can check the logs of the container by running:
 
