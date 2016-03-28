@@ -15,7 +15,7 @@ create the image `bobsense/mysql:stdv2`,
 ```
 $ git pull https://github.com/bobsense/mysql.git
 $ cd mysql
-$ docker build -t frodenas/mysql .
+$ docker build -t bobsense/mysql:stdv2 .
 ```
 
 # How to use this Image
