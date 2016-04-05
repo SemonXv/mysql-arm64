@@ -97,9 +97,14 @@ $ docker run -d -P
 In order to make Image smaller, I simply add mysql files which have been installed successfully to Dockerfile. If you want to make Image based on percona source code, you can do as follows:
 
 ```
-$ 
-$ 
-$ 
+$ cd percona-server-5.6.22-72.0
+$ sh BUILD/autorun.sh
+$ cmake -DCMAKE_INSTALL_PREFIX=/u01/my3306 -DMYSQL_DATADIR=/u01/my3306/data \
+    -DMYSQL_USER=mysql -DSYSCONFDIR=/etc -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MEMORY_STORAGE_ENGINE=1 \
+    -DMYSQL_UNIX_ADDR=/u01/my3306/run/mysql.sock -DMYSQL_TCP_PORT=3306 \
+    -DENABLED_LOCAL_INFILE=1  -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_EMBEDDED_SERVER=OFF \
+    -DEXTRA_CHARSETS=all -DDEFAULT_CHARSET=utf8  -DDEFAULT_COLLATION=utf8_general_ci \
+$ make && make install
 ```
 
 # Special Declare
