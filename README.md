@@ -1,7 +1,6 @@
 # MySQL Dockerfile
 
-Please refer to [bobsense/mysql](https://github.com/bobsense/mysql) for specific information.  
-The Dockerfile is used to produce a Docker Image for [MySQL](http://www.mysql.com).
+The Dockerfile is used to produce a Docker Image for [MySQL](http://www.mysql.com) on `ARM64`.
 
 # MySQL version
 
