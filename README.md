@@ -10,12 +10,12 @@ The Dockerfile is used to produce a Docker Image for [MySQL](http://www.mysql.co
 # How to build the Image
 
 You need to git pull mysql.git, then execute the following command under the `mysql` folder to 
-create the image `bobsense/mysql:stdv2`,
+create the image `bobsense/mysql`,
 
 ```
 $ git pull https://github.com/bobsense/mysql.git
 $ cd mysql
-$ docker build -t bobsense/mysql:stdv2 .
+$ docker build -t bobsense/mysql .
 ```
 
 # How to use this Image
@@ -30,7 +30,7 @@ $ docker run -d -P
     -e MYSQL_USER=bobsense \
     -e MYSQL_PASSWORD=123456 \
     -e MYSQL_DATABASE=HelloWorld  \
-    bobsense/mysql:stdv2
+    bobsense/mysql
 ```
 
 * `MYSQL_USER` to set a specific username
@@ -40,7 +40,7 @@ $ docker run -d -P
 If you do simply use mysql, it offers you a default user `mysql` and related password `123456`. Type as follows:
 
 ```
-$ docker run -d -P --name mysql bobsense/mysql:stdv2
+$ docker run -d -P --name mysql bobsense/mysql
 ```
 
 You should make sure which port on host is assigned to 3306 exposed on mysql container. Type as follows:
@@ -60,13 +60,12 @@ $ docker logs mysql
 You can use mysql service from the mysql container if you see an output like the following:
 
 ```
-========================================================================
+=================================================================
 You have the MySQL configuration as follows:
 MySQL_USER : "bobsense"
 MySQL_PASSWORD : "123456"
 MySQL_DATABASE : "HelloWorld"
-Please wait for one minute, then you can enjoy mysql service offerd by Docker!!!
-========================================================================
+
 160327 08:29:12 mysqld_safe Logging to '/u01/my3306/log/alert.log'
 160327 08:29:13 mysqld_safe Starting mysqld daemon with databases from /u01/my3306/data
 ```
@@ -74,7 +73,7 @@ Please wait for one minute, then you can enjoy mysql service offerd by Docker!!!
 Then you can log on mysql server and run mysql as you want. Just type:
 
 ```
-$ mysql -ubobsense -p123456 -P12756 -h127.0.0.1
+$ mysql -ubobsense -p123456 -P32771 -h127.0.0.1
 ```
 
 ## Persist database data
@@ -90,9 +89,19 @@ $ docker run -d -P
     -e MYSQL_PASSWORD=123456 \
     -e MYSQL_DATABASE=HelloWorld  \
     -v /tmp/mysql:/u01/my3306/data \
-    bobsense/mysql:stdv2
+    bobsense/mysql
+```
+
+# DIY
+
+In order to make Image smaller, I simply add mysql files which have been installed successfully to Dockerfile. If you want to make Image based on percona source code, you can do as follows:
+
+```
+$ 
+$ 
+$ 
 ```
 
 # Special Declare
 Refer to [frodenas/mysql](https://hub.docker.com/r/frodenas/mysql/).
-And forgive my ignorance, you are welcomed to make suggestions. I will try my best to make better.
+And you are welcomed to make suggestions. I will try my best to make better.
