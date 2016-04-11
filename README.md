@@ -91,6 +91,20 @@ $ docker run -d -P
     bobsense/mysql
 ```
 
+## Use your my.cnf
+
+You are allowed to run mysql container based on your my.cnf instead of the default, you should do like:
+
+```
+$ docker run -d -P 
+    --name mysql \
+    -e MYSQL_USER=bobsense \
+    -e MYSQL_PASSWORD=123456 \
+    -e MYSQL_DATABASE=HelloWorld  \
+    -v xxxx/my.cnf:/etc/my.cnf \
+    bobsense/mysql
+```
+
 # DIY
 
 In order to make Image smaller, I simply add mysql files which have been installed successfully to Dockerfile. If you want to make Image based on percona source code, you can do as follows:
