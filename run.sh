@@ -9,6 +9,7 @@ chown -R mysql.root /u01
 
 DATA_DIR=/u01/my3306/data/mysql
 if [ -d $DATA_DIR ]; then
+    /u01/my3306/bin/mysqld_safe --defaults-file=/etc/my.cnf --basedir=/u01/my3306 --datadir=/u01/my3306/data
     exit
 fi
 #Initialize Database
